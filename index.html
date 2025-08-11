@@ -15,24 +15,133 @@
   </header>
 
   <main class="wrap">
-    <section>
-      <h2>Es funktioniert!</h2>
-      <p>Wenn du das siehst, ist dein GitHub → Netlify Deploy korrekt.</p>
-      <ul>
-        <li>Adresse: Rheinbrückstrasse 17, 79713 Bad Säckingen</li>
-        <li>Tel: +49 171 3697076 · E-Mail: alessiaevents.balloons@gmail.com</li>
-      </ul>
-    </section>
+   <section>
+  <h2>Produkte</h2>
+  <div class="product-grid">
 
-    <section>
-      <h2>Als nächstes</h2>
-      <p>Lege <code>styles.css</code> daneben an (siehe unten) und sag mir Bescheid,
-      dann füge ich dir Schritt für Schritt den ganzen Shop (Warenkorb, PayPal/Stripe) als einzelne Dateien hinzu.</p>
-    </section>
+    <!-- Geschenkbox klein -->
+    <article class="product-card" data-id="box_s">
+      <h3>Geschenkbox – klein</h3>
+      <p><strong>21,50 €</strong></p>
+      <label>Farbe:
+        <select class="opt-color">
+          <option>Flieder</option>
+          <option>Lila</option>
+          <option>Gold</option>
+        </select>
+      </label>
+      <label>Personalisierung (max. 35 Zeichen)
+        <input class="opt-text" type="text" maxlength="35" placeholder="Dein Text">
+      </label>
+      <label>Menge
+        <input class="opt-qty" type="number" min="1" value="1">
+      </label>
+      <button class="add">In den Warenkorb</button>
+    </article>
+
+    <!-- Geschenkbox mittel -->
+    <article class="product-card" data-id="box_m">
+      <h3>Geschenkbox – mittel</h3>
+      <p><strong>23,50 €</strong></p>
+      <label>Farbe:
+        <select class="opt-color">
+          <option>Flieder</option><option>Lila</option><option>Gold</option>
+        </select>
+      </label>
+      <label>Personalisierung (max. 35 Zeichen)
+        <input class="opt-text" type="text" maxlength="35" placeholder="Dein Text">
+      </label>
+      <label>Menge
+        <input class="opt-qty" type="number" min="1" value="1">
+      </label>
+      <button class="add">In den Warenkorb</button>
+    </article>
+
+    <!-- Geschenkbox groß -->
+    <article class="product-card" data-id="box_l">
+      <h3>Geschenkbox – groß</h3>
+      <p><strong>27,50 €</strong></p>
+      <label>Farbe:
+        <select class="opt-color">
+          <option>Flieder</option><option>Lila</option><option>Gold</option>
+        </select>
+      </label>
+      <label>Personalisierung (max. 35 Zeichen)
+        <input class="opt-text" type="text" maxlength="35" placeholder="Dein Text">
+      </label>
+      <label>Menge
+        <input class="opt-qty" type="number" min="1" value="1">
+      </label>
+      <button class="add">In den Warenkorb</button>
+    </article>
+
+    <!-- Tischnamen -->
+    <article class="product-card" data-id="name_card">
+      <h3>Tischnamen (Acryl)</h3>
+      <p><strong>30,00 €</strong></p>
+      <label>Farbe:
+        <select class="opt-color">
+          <option>Flieder</option><option>Lila</option><option>Gold</option>
+        </select>
+      </label>
+      <label>Wunschname (max. 35 Zeichen)
+        <input class="opt-text" type="text" maxlength="35" placeholder="Name">
+      </label>
+      <label>Menge
+        <input class="opt-qty" type="number" min="1" value="1">
+      </label>
+      <button class="add">In den Warenkorb</button>
+    </article>
+
+    <!-- Folienzahlen -->
+    <article class="product-card" data-id="foil_num">
+      <h3>Folienzahlen</h3>
+      <p><strong>20,00 €</strong></p>
+      <label>Farbe:
+        <select class="opt-color">
+          <option>Flieder</option><option>Lila</option><option>Gold</option>
+        </select>
+      </label>
+      <label>Zahl/Name (max. 35 Zeichen)
+        <input class="opt-text" type="text" maxlength="35" placeholder="Zahl oder Text">
+      </label>
+      <label>Menge
+        <input class="opt-qty" type="number" min="1" value="1">
+      </label>
+      <button class="add">In den Warenkorb</button>
+    </article>
+
+    <!-- Bubble Ballons -->
+    <article class="product-card" data-id="bubble">
+      <h3>Bubble Ballons</h3>
+      <p><strong>31,50 €</strong></p>
+      <label>Farbe:
+        <select class="opt-color">
+          <option>Flieder</option><option>Lila</option><option>Gold</option>
+        </select>
+      </label>
+      <label>Personalisierung (max. 35 Zeichen)
+        <input class="opt-text" type="text" maxlength="35" placeholder="Dein Text">
+      </label>
+      <label>Menge
+        <input class="opt-qty" type="number" min="1" value="1">
+      </label>
+      <button class="add">In den Warenkorb</button>
+    </article>
+
+  </div>
+</section>
+
+<section id="cart">
+  <h2>Warenkorb</h2>
+  <ul id="cartItems"></ul>
+  <p><strong>Summe: <span id="cartTotal">0,00 €</span></strong></p>
+  <p class="mini">Zahlarten: PayPal & Kreditkarte – Versand: DE, CH oder Abholung</p>
+</section>
   </main>
 
   <footer class="foot">
     <div class="wrap">&copy; 2025 Alessia Events</div>
   </footer>
-</body>
+<script src="script.js"></script> </body>
 </html
