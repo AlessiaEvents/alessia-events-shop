@@ -158,4 +158,28 @@ footer {
 .product-image:hover {
   transform: scale(1.05); /* leicht vergrößern */
 }
+/* Produktbilder hübsch & einheitlich */
+.product-image{
+  width: 100%;
+  height: 260px;          /* gleich hohe Kacheln */
+  object-fit: cover;      /* Bild füllt den Rahmen ohne Verzerrung */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  margin-bottom: 10px;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.product-image:hover{
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+}
+
+/* Karten leicht luftiger */
+.product-card{
+  background:#fff;
+  border-radius:14px;
+  padding:16px;
+  box-shadow:0 2px 12px rgba(0,0,0,.08);
+}
+.product-card h3{ margin:10px 0 6px }
+.product-card p{ margin:0 0 8px }
 
