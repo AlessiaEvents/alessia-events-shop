@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bestellung erfolgreich – Alessia Events</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Vielen Dank für deine Bestellung!</h1>
+    <p>Wir haben deine Bestellung erhalten. Eine Bestätigung wird an deine E-Mail gesendet.</p>
+
+    <h2>Zusammenfassung</h2>
+    <div id="orderSummary"></div>
+
+    <p><a href="index.html">Zurück zum Shop</a></p>
+  </main>
+
+  <script>
+    function money(n){ return (Math.round(n*100)/100).toFixed(2).replace('.', ',') + ' €'; }
+    const raw = localStorage.getItem('alessia_last_order');
+    if(raw){
+      const o = JSON.parse(raw);
+      const rows = o.items.map(it=>(
+        `<li>${it.qty}× ${it.id} – ${money(it.price * it.qty)} <div class="mini">${it.color||'-'} | ${it.text||'-'}</div></li>`
+      )).join('');
+      document.getElementById('orderSummary').innerHTML = `
+        <ul>${rows}</ul>
+        <p>Versand: ${o.shippingKey} – ${money(o.shippingAmount)}</p>
+        <p><strong>Gesamt: ${money(o.grandTotal)}</strong></p>
+      `;
+    }
+  </script>
+</body>
+</html>
