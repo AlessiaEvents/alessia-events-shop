@@ -146,4 +146,16 @@ footer {
   text-align: center;
   margin-top: 30px;
 }
+.product-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px; /* runde Ecken */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* leichter Schatten */
+  transition: transform 0.3s ease; /* sanfter Hover-Effekt */
+}
+
+.product-image:hover {
+  transform: scale(1.05); /* leicht vergrößern */
+}
 
