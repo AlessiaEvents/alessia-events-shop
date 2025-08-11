@@ -164,8 +164,49 @@ document.getElementById('placeOrder')?.addEventListener('click', ()=>{
   };
   localStorage.setItem('alessia_last_order', JSON.stringify(order));
 
-  // Weiter zur Success-Seite
-  window.location.href = 'success.html';
+ document.getElementById('placeOrder')?.addEventListener('click', async ()=>{
+  const email = (document.getElementById('buyerEmail')?.value || '').trim();
+  if(!email){ alert('Bitte E-Mail eingeben.'); return; }
+
+  const order = {
+    items: loadCart(),
+    shippingKey: getShipping(),
+    productsTotal: cartSubtotal(),
+    shippingAmount: shippingAmount(),
+    grandTotal: euros(cartSubtotal() + shippingAmount()),
+    buyerEmail: email,
+    createdAt: new Date().toISOString()
+  };
+  localStorage.setItem('alessia_last_order', JSON.stringify(order));
+
+  try {
+    // Stripe Checkout Session holen
+    const res = await fetch('/.netlify/functions/create-checkout', {
+      method: 'POST',
+      headers: { 'Content-Type':'application/json' },
+      body: JSON.stringify({ order })
+    });
+    if(!res.ok) throw new Error('Checkout error');
+    const data = await res.json();
+    if(data.url){
+      // vor Redirect schon E-Mail anstoßen (optional auch erst auf Success)
+      fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        headers: { 'Content-Type':'application/json' },
+        body: JSON.stringify({ order })
+      }).catch(()=>{});
+      // zu Stripe weiterleiten
+      window.location.href = data.url;
+    } else {
+      throw new Error('No session URL');
+    }
+  } catch (e) {
+    console.error(e);
+    alert('Zahlung konnte nicht gestartet werden. Bitte später erneut versuchen.');
+  }
+});
+
+
 });
 
 document.addEventListener('DOMContentLoaded', renderCart);
