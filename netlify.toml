@@ -1,0 +1,9 @@
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["stripe", "nodemailer"]
+
+# (Optional) SPA-Fallback, wenn du später ein Router-Framework nutzt:
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200
