@@ -61,4 +61,19 @@ footer {
 .note-ch{color:#6b4f00;background:#fff8e1;border:1px solid #f1e2b3;padding:8px 10px;border-radius:8px;margin-top:6px;font-size:12px}
 .warn{color:#b30000;font-weight:600;margin-top:6px}
 
+/* ===== HEADER LOGO ===== */
+.site-header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.site-logo {
+  max-width: 200px;
+  height: auto;
+}
+
+.site-header h1 {
+  color: #2c3e50;
+  margin-top: 10px;
+}
 
