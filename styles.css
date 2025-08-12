@@ -161,7 +161,7 @@ footer {
 /* Produktbilder hübsch & einheitlich */
 .product-image-container {
   width: 220px; /* Einheitliche Breite */
-  height: 220px; /* Einheitliche Höhe */
+; /* Einheitliche Höhe */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -201,3 +201,26 @@ footer {
 .product-image:hover{transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,.3)}
 .product-info{flex-grow:1;display:flex;flex-direction:column;gap:8px;text-align:center;width:100%}
 .add-to-cart-btn{margin-top:auto}
+/* Bild komplett anzeigen, nicht croppen */
+.product-card .product-image {
+  width: 100%;
+  max-width: 220px;
+  max-height: 220px;
+  height: auto !important;
+  object-fit: contain !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* optionale Box, falls du sie nutzt */
+.product-image-container {
+  width: 220px;
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
