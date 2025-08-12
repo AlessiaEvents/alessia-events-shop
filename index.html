@@ -1,61 +1,219 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alessia Events – Balloons & more</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- HEADER mit Logo -->
+  <!-- Header mit Logo -->
   <header class="site-header">
-    <img src="IMG_1535.jpg" alt="Alessia Events Logo" class="site-logo" />
+    <img src="IMG_1535.jpg" alt="Alessia Events Logo" class="site-logo">
     <h1>Alessia Events – Balloons & more</h1>
   </header>
 
-  <!-- Begrüßung -->
   <section class="intro">
-    <p>Geschenkartikel für jeden Anlass – personalisierte Geschenkboxen, Ballons, Tischnamen in den Farben Flieder, Lila und Gold.</p>
-    <p>Kontakt: <a href="tel:+491713697076">+49 171 3697076</a> | 
-       <a href="mailto:alessiaevents.balloons@gmail.com">alessiaevents.balloons@gmail.com</a>
+    <p>Geschenkartikel für jeden Anlass – personalisierte Geschenkboxen, Ballons, Tischnamen in Flieder, Lila & Gold.</p>
+    <p>Kontakt: <a href="tel:+491713697076">+49 171 3697076</a> ·
+      <a href="mailto:alessiaevents.balloons@gmail.com">alessiaevents.balloons@gmail.com</a>
     </p>
   </section>
 
-  <!-- PRODUKT-BEREICH -->
-  <main>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="images/box-klein.jpg" alt="Box klein" />
-        <h3>Box klein</h3>
-        <p>21,50 €</p>
-        <button>In den Warenkorb</button>
+  <!-- Produkte -->
+  <main class="wrap">
+    <section>
+      <h2>Produkte</h2>
+      <div class="product-grid">
+
+        <!-- Geschenkbox – klein -->
+        <article class="product-card" data-id="box_s">
+          <div class="product-image-container">
+            <img src="images/box_klein.jpg" alt="Box klein" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3>Geschenkbox – klein</h3>
+            <p><strong>21,50 €</strong></p>
+            <label>Farbe:
+              <select class="opt-color">
+                <option>Flieder</option><option>Lila</option><option>Gold</option>
+              </select>
+            </label>
+            <label>Personalisierung (max. 35 Zeichen)
+              <input class="opt-text" type="text" maxlength="35" placeholder="Dein Text">
+            </label>
+            <label>Menge
+              <input class="opt-qty" type="number" min="1" value="1">
+            </label>
+            <button class="add add-to-cart-btn">In den Warenkorb</button>
+          </div>
+        </article>
+
+        <!-- Geschenkbox – mittel -->
+        <article class="product-card" data-id="box_m">
+          <div class="product-image-container">
+            <img src="images/box_mittel.jpg" alt="Box mittel" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3>Geschenkbox – mittel</h3>
+            <p><strong>23,50 €</strong></p>
+            <label>Farbe:
+              <select class="opt-color">
+                <option>Flieder</option><option>Lila</option><option>Gold</option>
+              </select>
+            </label>
+            <label>Personalisierung (max. 35 Zeichen)
+              <input class="opt-text" type="text" maxlength="35" placeholder="Dein Text">
+            </label>
+            <label>Menge
+              <input class="opt-qty" type="number" min="1" value="1">
+            </label>
+            <button class="add add-to-cart-btn">In den Warenkorb</button>
+          </div>
+        </article>
+
+        <!-- Geschenkbox – groß -->
+        <article class="product-card" data-id="box_l">
+          <div class="product-image-container">
+            <img src="images/box_gross.jpg" alt="Box groß" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3>Geschenkbox – groß</h3>
+            <p><strong>27,50 €</strong></p>
+            <label>Farbe:
+              <select class="opt-color">
+                <option>Flieder</option><option>Lila</option><option>Gold</option>
+              </select>
+            </label>
+            <label>Personalisierung (max. 35 Zeichen)
+              <input class="opt-text" type="text" maxlength="35" placeholder="Dein Text">
+            </label>
+            <label>Menge
+              <input class="opt-qty" type="number" min="1" value="1">
+            </label>
+            <button class="add add-to-cart-btn">In den Warenkorb</button>
+          </div>
+        </article>
+
+        <!-- Tischnamen -->
+        <article class="product-card" data-id="name_card">
+          <div class="product-image-container">
+            <img src="images/tischnamen.jpg" alt="Tischnamen" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3>Tischnamen (Acryl)</h3>
+            <p><strong>30,00 €</strong></p>
+            <label>Farbe:
+              <select class="opt-color">
+                <option>Flieder</option><option>Lila</option><option>Gold</option>
+              </select>
+            </label>
+            <label>Wunschname (max. 35 Zeichen)
+              <input class="opt-text" type="text" maxlength="35" placeholder="Name">
+            </label>
+            <label>Menge
+              <input class="opt-qty" type="number" min="1" value="1">
+            </label>
+            <button class="add add-to-cart-btn">In den Warenkorb</button>
+          </div>
+        </article>
+
+        <!-- Folienzahlen -->
+        <article class="product-card" data-id="foil_num">
+          <div class="product-image-container">
+            <img src="images/folienzahlen.jpg" alt="Folienzahlen" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3>Folienzahlen</h3>
+            <p><strong>20,00 €</strong></p>
+            <label>Farbe:
+              <select class="opt-color">
+                <option>Flieder</option><option>Lila</option><option>Gold</option>
+              </select>
+            </label>
+            <label>Zahl/Text (max. 35 Zeichen)
+              <input class="opt-text" type="text" maxlength="35" placeholder="z. B. 18 oder Name">
+            </label>
+            <label>Menge
+              <input class="opt-qty" type="number" min="1" value="1">
+            </label>
+            <button class="add add-to-cart-btn">In den Warenkorb</button>
+          </div>
+        </article>
+
+        <!-- Bubble Ballons -->
+        <article class="product-card" data-id="bubble">
+          <div class="product-image-container">
+            <img src="images/bubble.jpg" alt="Bubble Ballons" class="product-image">
+          </div>
+          <div class="product-info">
+            <h3>Bubble Ballons</h3>
+            <p><strong>31,50 €</strong></p>
+            <label>Farbe:
+              <select class="opt-color">
+                <option>Flieder</option><option>Lila</option><option>Gold</option>
+              </select>
+            </label>
+            <label>Personalisierung (max. 35 Zeichen)
+              <input class="opt-text" type="text" maxlength="35" placeholder="Dein Text">
+            </label>
+            <label>Menge
+              <input class="opt-qty" type="number" min="1" value="1">
+            </label>
+            <button class="add add-to-cart-btn">In den Warenkorb</button>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Warenkorb & Checkout -->
+    <section id="cart">
+      <h2>Warenkorb</h2>
+      <ul id="cartItems"></ul>
+
+      <div class="totals">
+        <div class="row"><span>Zwischensumme</span><strong id="subTotal">0,00 €</strong></div>
+
+        <div class="row">
+          <label for="shippingSelect">Versandart</label>
+          <select id="shippingSelect">
+            <option value="de_standard">DE – Standard (2 Werktage)</option>
+            <option value="de_express">DE – Express (max. 2 Tage)</option>
+            <option value="ch_standard">CH – Standard (max. 3 Tage)</option>
+            <option value="ch_express">CH – Express (max. 3 Tage)</option>
+            <option value="pickup">Abholung im Laden (Bad Säckingen)</option>
+          </select>
+        </div>
+
+        <div id="freeShipHint" class="hint"></div>
+        <div id="customsNote" class="note-ch" style="display:none;">
+          🇨🇭 Hinweis: Für Lieferungen in die Schweiz können zusätzliche Zollgebühren anfallen.
+        </div>
+        <div id="expressWarning" class="warn" style="display:none;">
+          Express ist erst ab 22,00 € Bestellwert verfügbar.
+        </div>
+
+        <div class="row"><span>Versand</span><strong id="shipAmount">0,00 €</strong></div>
+        <div class="row total"><span>Gesamt</span><strong id="grandTotal">0,00 €</strong></div>
       </div>
 
-      <div class="product-card">
-        <img src="images/box-mittel.jpg" alt="Box mittel" />
-        <h3>Box mittel</h3>
-        <p>23,50 €</p>
-        <button>In den Warenkorb</button>
+      <div class="checkout">
+        <label>E-Mail für Bestellbestätigung
+          <input type="email" id="buyerEmail" placeholder="deine@email.de" required>
+        </label>
+        <button id="placeOrder">Bestellung abschließen</button>
+        <p class="mini">Gratisversand: DE ab 80 €, CH ab 100 € (Standard). Express ab 22 € Bestellwert.</p>
       </div>
-
-      <div class="product-card">
-        <img src="images/box-gross.jpg" alt="Box groß" />
-        <h3>Box groß</h3>
-        <p>27,50 €</p>
-        <button>In den Warenkorb</button>
-      </div>
-
-      <!-- Weitere Produkte hier -->
-    </div>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2025 Alessia Events – Balloons & more</p>
-    <p>Rheinbrückstrasse 17, 79713 Bad Säckingen – Inhaber: Alessia Ciurca</p>
+  <footer class="foot">
+    <div class="wrap">&copy; 2025 Alessia Events – Rheinbrückstrasse 17, 79713 Bad Säckingen</div>
   </footer>
 
+  <script src="script.js"></script>
 </body>
 </html>
