@@ -159,18 +159,29 @@ footer {
   transform: scale(1.05); /* leicht vergrößern */
 }
 /* Produktbilder hübsch & einheitlich */
-.product-image{
-  width: 100%;
-  height: 260px;          /* gleich hohe Kacheln */
-  object-fit: cover;      /* Bild füllt den Rahmen ohne Verzerrung */
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
-  margin-bottom: 10px;
-  transition: transform .25s ease, box-shadow .25s ease;
+.product-image-container {
+  width: 220px; /* Einheitliche Breite */
+  height: 220px; /* Einheitliche Höhe */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff; /* Hintergrundfarbe für leere Ränder */
+  border-radius: 10px;
+  overflow: hidden;
 }
-.product-image:hover{
-  transform: scale(1.02);
-  box-shadow: 0 8px 20px rgba(0,0,0,.2);
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Bild komplett anzeigen */
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
 }
 
 /* Karten leicht luftiger */
